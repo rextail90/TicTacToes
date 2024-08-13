@@ -1,0 +1,123 @@
+/* Body and Container Styling */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f5e4d5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://wallpapers.com/images/featured/tyler-the-creator-4k-5rksgtb3wdxtl7k9.jpg'); /* Replace with actual image URL */
+    background-size: cover;
+    color: #2c2c2c;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 20px;
+    border: 2px solid #2c2c2c;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: auto;
+    max-width: 90vw; /* Allow container to expand to 90% of the viewport width */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Status and Button Styling */
+#status {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #5a8d7e;
+    color: white;
+    border: 2px solid #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #6ea99a;
+}
+
+/* Board Styling */
+#board {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+    visibility: hidden;
+    justify-content: center; /* Center the board within the container */
+}
+
+.square {
+    background-color: #f7f0e9;
+    border: 2px solid #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.square:hover {
+    background-color: #e8d9c8;
+}
+
+/* Responsive Board Adjustments */
+@media (min-width: 600px) {
+    #board {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Automatically adjust square size */
+        grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+    }
+
+    .square {
+        min-width: 60px;
+        min-height: 60px;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 599px) {
+    #board {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Adjust square size for smaller screens */
+        grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+    }
+
+    .square {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+#playerSelection {
+    margin-bottom: 20px;
+}
+
+#playerSelection p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #2c2c2c;
+}
+
+#resetButton {
+    visibility: hidden;
+}
