@@ -23,6 +23,7 @@ body {
     width: 90%;
     max-width: 500px;
     overflow: hidden;
+    box-sizing: border-box; /* Ensure padding is included in the total width/height */
 }
 
 h1 {
@@ -59,39 +60,38 @@ button:hover {
 /* Board Styling */
 #board {
     display: grid;
-    gap: 5px;
+    gap: 2px; /* Reduce the gap between squares to maximize space */
     margin-bottom: 20px;
     visibility: hidden;
     justify-content: center;
     align-items: center;  /* Ensure the board is centered */
-    max-width: 100vw;      /* Ensure the board doesn't exceed the screen width */
-    max-height: 100vh;     /* Ensure the board doesn't exceed the screen height */
+    max-width: 100%;      /* Ensure the board doesn't exceed the container width */
+    max-height: 100%;     /* Ensure the board doesn't exceed the container height */
+    box-sizing: border-box;
 }
 
 .square {
     background-color: #f7f0e9;
-    border: 2px solid #2c2c2c;
+    border: 1px solid #2c2c2c;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     cursor: pointer;
     aspect-ratio: 1 / 1; /* Ensure squares remain square */
-    max-width: 100%;     /* Prevent squares from exceeding the available space */
-    max-height: 100%;    /* Prevent squares from exceeding the available space */
+    width: 100%;
+    height: auto; /* Allow height to scale with width to maintain aspect ratio */
 }
 
-/* Responsive Design */
+/* Dynamic Resizing for Larger Boards */
 @media (min-width: 600px) {
     #board {
-        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Automatically adjust square size */
-        grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Adjust square size for larger boards */
+        grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
     }
 
     .square {
-        min-width: 50px;
-        min-height: 50px;
-        font-size: 1.5em;
+        font-size: 1em; /* Adjust font size to fit within smaller squares */
     }
 }
 
@@ -102,9 +102,7 @@ button:hover {
     }
 
     .square {
-        min-width: 30px;
-        min-height: 30px;
-        font-size: 1.2em;
+        font-size: 0.8em; /* Further adjust font size to ensure visibility */
     }
 }
 

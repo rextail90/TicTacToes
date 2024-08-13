@@ -48,13 +48,13 @@ function handleSquareClick(event) {
     event.target.textContent = playerSymbol;
 
     if (checkWin(playerSymbol)) {
-        alert(`You win!`);
+        alert(`ok u win i guess`);
         if (boardSize < 10) {
             boardSize++;
         }
         initializeBoard(boardSize);  // Initialize the new board for the next round
     } else if (checkDraw()) {
-        alert("It's a draw!");
+        alert("wow u made a bot draw?");
         resetToStartScreen();  // Reset to start screen after a draw
     } else {
         currentPlayer = botSymbol;
@@ -83,10 +83,10 @@ function botMove() {
     square.textContent = botSymbol;
 
     if (checkWin(botSymbol)) {
-        alert(`Bot wins!`);
+        alert(`the bot won? u suck lolllll`);
         resetToStartScreen();  // Reset to start screen after a loss
     } else if (checkDraw()) {
-        alert("It's a draw!");
+        alert("wow u made a bot draw?");
         resetToStartScreen();  // Reset to start screen after a draw
     } else {
         currentPlayer = playerSymbol;
