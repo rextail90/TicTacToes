@@ -21,8 +21,8 @@ function initializeBoard(size) {
 
 function renderBoard() {
     boardElement.innerHTML = '';
-    boardElement.style.gridTemplateColumns = `repeat(${boardSize}, 100px)`;
-    boardElement.style.gridTemplateRows = `repeat(${boardSize}, 100px)`;
+    boardElement.style.gridTemplateColumns = `repeat(${boardSize}, 1fr)`;
+    boardElement.style.gridTemplateRows = `repeat(${boardSize}, 1fr)`;
 
     for (let i = 0; i < boardSize; i++) {
         for (let j = 0; j < boardSize; j++) {
@@ -117,6 +117,7 @@ function startGame(selectedSymbol) {
     playerSymbol = selectedSymbol;
     botSymbol = playerSymbol === 'X' ? 'O' : 'X';
     currentPlayer = 'X';
+    gameActive = true;  // Set the game as active when the game starts
     playerSelection.style.display = 'none';
     boardElement.style.visibility = 'visible';
     resetButton.style.visibility = 'visible';
